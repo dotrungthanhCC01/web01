@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mảng Số Nguyên Ngẫu Nhiên</title>
+</head>
+<body>
+    <p id="ngaunhien"></p>
+    <script>
+        var mangNgauNhien = [];
+        var doDai = 10; 
+        var min = 0;
+        var max = 100;
+        // Hàm tạo mảng số nguyên ngẫu nhiên
+        function taoMangNgauNhien() {
+            for (var i = 0; i < doDai; i++) {
+                mangNgauNhien.push(Math.floor(Math.random() * (max - min + 1)) + min);
+            }
+            document.getElementById("ngaunhien").innerText = "Mảng số nguyên ngẫu nhiên: " + mangNgauNhien.join(", ");
+        }
+        // Hàm sắp xếp mảng theo thứ tự tăng dần
+        function sapXepTangDan() {
+            mangNgauNhien.sort(function(a, b) {
+                return a - b;
+            });
+            document.getElementById("ngaunhien").innerText = "Mảng sau khi sắp xếp: " + mangNgauNhien.join(", ");
+        }
+        // Hàm loại bỏ các phần tử trùng nhau
+        function loaiBoTrung() {
+            mangNgauNhien = mangNgauNhien.filter(function(item, index, self) {
+                return self.indexOf(item) === index;
+            });
+            document.getElementById("ngaunhien").innerText = "Mảng sau khi loại bỏ các phần tử trùng nhau: " + mangNgauNhien.join(", ");
+        }
+        // Gọi hàm tạo mảng số nguyên ngẫu nhiên khi trang được tải
+        window.onload = taoMangNgauNhien;
+    </script>
+    <button onclick="sapXepTangDan()">Sắp xếp theo thứ tự tăng dần</button>
+    <button onclick="loaiBoTrung()">Loại bỏ các phần tử trùng nhau</button>
+</body>
+</html>

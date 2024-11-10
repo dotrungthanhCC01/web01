@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DEM SO PHAN TU DIV</h1>
+    <p>BUC TRANH DUOM MAU</p>
+    <div>TOI YEU EM</div>
+    <div><img src="https://cdn.tuoitre.vn/thumb_w/480/471584752817336320/2024/8/10/100-2024-1080p-hd-q7ljjnunwqtovkjeiffmtreg7k2-17228436596321407572541-read-only-17232582798341385239489.jpg"></div>
+    <div>TOI THICH EM</div>
+    <p id="result"></p>
+    <button onclick="demdiv()">DEM SO PHAN TU</button>
+    <script>
+        function demdiv(){
+           var divs= document.querySelectorAll('div');
+           var dem = divs.length;
+           document.getElementById('result').textContent = 'so phan tu cua <div> la: ' + dem;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>nguyen van A</li>
+        <li> nguyen van B</li>
+        <li>nguyen van C</li>
+        <li>nguyen van D</li>
+    </ul>
+    <button onclick="themphantu()">THEM</button>
+    <script>
+        function themphantu(){
+            var phantu = document.createElement('li');
+            var text = document.createTextNode("nguyen van E");
+            phantu.appendChild(text);
+            document.getElementById('list').appendChild(phantu);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+/* Định dạng tổng quát cho TaskItem */
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Vòng tròn bên trái task */
+  .task-status-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 12px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .task-status-circle.todo {
+    border-color: #ccc;
+    background-color: transparent;
+  }
+  
+  .task-status-circle.done {
+    background-color: green;
+    border-color: green;
+  }
+  
+  /* Định dạng tên task */
+  .task-name {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Định dạng ngày của task */
+  .task-due-date {
+    font-size: 14px;
+    color: #999;
+    margin-right: 10px;
+  }
+  
+  /* Nút delete */
+  button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  
+  button:hover {
+    background-color: #d32f2f;
+  }
+/* Định dạng tiêu đề */
+.task-list h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Thêm icon gần tiêu đề */
+  .task-list h1::after {
+    content: "🔥🎯";
+    margin-left: 8px;
+    font-size: 20px;
+  }
+  
+  /* Định dạng cho phần thêm task */
+  .add-task {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .add-task input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+  }
+  
+  .add-task button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .add-task button:hover {
+    background-color: #45a049;
+  }
+  

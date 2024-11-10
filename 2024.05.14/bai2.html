@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <p id="ngaunhien"></p>
+    <p id="ketqua"></p>
+    <script>
+        var mangNgauNhien = [];
+        var doDai = 10; 
+        var min = 0;
+        var max = 100;
+        // Hàm tạo mảng số nguyên ngẫu nhiên
+        function taoMangNgauNhien() {
+        // Xóa bỏ mảng cũ trước khi tạo mảng mới
+        mangNgauNhien = [];
+    
+        for (var i = 0; i < doDai; i++) {
+         mangNgauNhien.push(Math.floor(Math.random() * (max - min + 1)) + min);
+        }
+        document.getElementById("ngaunhien").innerText = "Mảng số nguyên ngẫu nhiên: " + mangNgauNhien.join(", ");
+        }
+
+        // Hàm tìm số nguyên lớn nhất trong mảng
+        function timSoNguyenLonNhat() {
+            var soLonNhat = Math.max(...mangNgauNhien);
+            document.getElementById("ketqua").innerText = "Số nguyên lớn nhất trong mảng: " + soLonNhat;
+        }
+        // Hàm tìm các số chính phương trong mảng
+        function timSoChinhPhuong() {
+            var soChinhPhuong = mangNgauNhien.filter(function(num) {
+                return Number.isInteger(Math.sqrt(num));
+            });
+            document.getElementById("ketqua").innerText = "Các số chính phương trong mảng: " + soChinhPhuong.join(", ");
+        }
+        // Hàm tìm các số lớn hơn trung bình cộng của mảng
+        function timSoLonHonTrungBinhCong() {
+            var trungBinhCong = mangNgauNhien.reduce(function(sum, num) {
+                return sum + num;
+            }, 0) / mangNgauNhien.length;
+            var soLonHonTrungBinh = mangNgauNhien.filter(function(num) {
+                return num > trungBinhCong;
+            });
+            document.getElementById("ketqua").innerText = "Các số lớn hơn trung bình cộng của mảng: " + soLonHonTrungBinh.join(", ");
+        }
+        // Hàm tính trung bình cộng của các số không âm trong mảng
+        function tinhTrungBinhCong() {
+            var soKhongAm = mangNgauNhien.filter(function(num) {
+                return num >= 0;
+            });
+            var trungBinhCong = soKhongAm.reduce(function(sum, num) {
+                return sum + num;
+            }, 0) / soKhongAm.length;
+            document.getElementById("ketqua").innerText = "Trung bình cộng của các số không âm trong mảng: " + trungBinhCong;
+        }
+    </script>
+    
+    <button onclick="taoMangNgauNhien()">Tạo mảng ngẫu nhiên</button><br>
+    <button onclick="timSoNguyenLonNhat()">Tìm số nguyên lớn nhất</button><br>
+    <button onclick="timSoChinhPhuong()">Tìm số chính phương</button><br>
+    <button onclick="timSoLonHonTrungBinhCong()">Tìm số lớn hơn trung bình cộng</button><br>
+    <button onclick="tinhTrungBinhCong()">Tính trung bình cộng</button><br>
+    
+    <p id="ngaunhien"></p>
+    <p id="ketqua"></p>
+</body>
+</html>

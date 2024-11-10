@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="item">giao trinh toan roi rac 1</p>
+    <p class="item">giao trinh triet hoc mac </p>
+    <p>giao trinh thao tac tao lap van ban</p>
+    <button onclick="thaydoi()">THAY DOI</button>
+    <script>
+        function thaydoi(){
+           var paragraphs= document.querySelectorAll('.item')
+           paragraphs.forEach(function(item){
+             item.textContent ='Updated item';
+           })
+        }
+        
+    </script>
+    
+</body>
+</html>
