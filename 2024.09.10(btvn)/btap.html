@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>QUAN LY SINH VIEN</h1>
+    <table id="sinhvien">
+        <thead>
+            <tr>
+                <th>Ma sinh vien</th>
+                <th>Ho va ten</th>
+                <th>ngay thang nam sinh</th>
+                <th>so dien thoai</th>
+                <th>Que quan</th>
+            </tr>
+        </thead>
+        <tbody>
+ <!-- chen thong tin sinh vien -->
+        </tbody>
+    </table>
+    <button onclick="themsinhvien()">THEM SINH VIEN</button>
+    <div id="studentForm" style="display:none;">
+        <h2 id="formTitle">Thêm Sinh Viên</h2>
+        <input type="hidden" id="studentId" />
+        <label for="studentCode">Mã Sinh Viên:</label>
+        <input type="text" id="studentCode" required><br>
+        <label for="name">Họ Tên:</label>
+        <input type="text" id="name" required><br>
+        <label for="gender">Giới Tính:</label>
+        <select id="gender">
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+        </select><br>
+        <label for="dob">Ngày Sinh:</label>
+        <input type="date" id="dob" required><br>
+        <label for="hometown">Quê Quán:</label>
+        <input type="text" id="hometown" required><br>
+        <button onclick="saveStudent()">Lưu</button>
+        <button onclick="cancelForm()">Hủy</button>
+    </div>
+    <script src="scrips.js"></script>
+</body>
+</html>

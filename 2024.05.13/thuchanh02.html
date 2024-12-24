@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thêm mới Item</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#addBtn").click(function(){
+    var newItem = $("#newItem").val().trim(); // Lấy giá trị từ ô input và loại bỏ khoảng trắng ở đầu và cuối chuỗi
+    if (newItem !== '') { // Kiểm tra xem giá trị có rỗng hay không
+      $("#itemList").append("<li>" + newItem + "</li>"); // Thêm mục mới vào danh sách
+      $("#newItem").val(''); // Xoá trắng ô input sau khi thêm mục mới
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<input type="text" id="newItem" placeholder="Nhập mục mới...">
+<button type="button" id="addBtn">Add</button>
+
+<ul id="itemList">
+  <!-- Danh sách item sẽ được thêm vào đây -->
+</ul>
+
+</body>
+</html>

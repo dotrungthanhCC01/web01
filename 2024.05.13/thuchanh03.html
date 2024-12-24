@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide Ảnh</title>
+<style>
+  #slider {
+    width: 400px;
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
+  }
+  #slider ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 2000px; /* Tổng chiều rộng của tất cả các ảnh */
+    transition: margin-left 0.5s;
+  }
+  #slider ul li {
+    float: left;
+  }
+  #slider ul li img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .btn {
+    cursor: pointer;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  var slideIndex = 0;
+  var slideInterval = setInterval(nextSlide, 5000); // Tự động trượt ảnh sau mỗi 5s
+  
+  function nextSlide() {
+    slideIndex++;
+    if (slideIndex >= $("#slider ul li").length) {
+      slideIndex = 0;
+    }
+    var slideWidth = $("#slider ul li").width();
+    $("#slider ul").animate({marginLeft: -slideIndex * slideWidth});
+  }
+  
+  function prevSlide() {
+    slideIndex--;
+    if (slideIndex < 0) {
+      slideIndex = $("#slider ul li").length - 1;
+    }
+    var slideWidth = $("#slider ul li").width();
+    $("#slider ul").animate({marginLeft: -slideIndex * slideWidth});
+  }
+  
+  $(".nextBtn").click(function() {
+    clearInterval(slideInterval); // Dừng tự động trượt khi người dùng bấm next
+    nextSlide();
+  });
+  
+  $(".prevBtn").click(function() {
+    clearInterval(slideInterval); // Dừng tự động trượt khi người dùng bấm back
+    prevSlide();
+  });
+});
+</script>
+</head>
+<body>
+
+<div id="slider">
+  <ul>
+    <li><img src="https://via.placeholder.com/400x200?text=Slide%201" alt="Slide 1"></li>
+    <li><img src="https://via.placeholder.com/400x200?text=Slide%202" alt="Slide 2"></li>
+    <li><img src="https://via.placeholder.com/400x200?text=Slide%203" alt="Slide 3"></li>
+    <li><img src="https://via.placeholder.com/400x200?text=Slide%204" alt="Slide 4"></li>
+  </ul>
+</div>
+
+<button class="btn prevBtn">Back</button>
+<button class="btn nextBtn">Next</button>
+
+</body>
+</html>

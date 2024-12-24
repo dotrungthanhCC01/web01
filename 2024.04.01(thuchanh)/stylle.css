@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.san-pham {
+    flex: 0 0 calc(16.666% - 20px);
+    width: 30%;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.san-pham img {
+    width: 100%;
+    height: auto;
+}
+
+
+.dien-thoai {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #05baf1;
+}
+
+
+.gia-dien-thoai {
+    font-size: 14px;
+    margin-top: 5px;
+    color:rgb(231, 10, 39);
+}
+
+
+.san-pham:hover {
+    border-color: #2b185bd2;
+}
+
+.dien-thoai:hover, .gia-dien-thoai:hover {
+    color: #ffc400;
+}
